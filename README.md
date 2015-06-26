@@ -58,3 +58,6 @@ var scrollspy = new Scrollspy({
 - **leaveTarget**: 【回调函数】监听选择器离开监听对象区域的事件
 - **scrollDown**: 【回调函数】监听屏幕向下滚动的事件
 - **scrollUp**: 【回调函数】监听屏幕向上滚动的事件
+
+## Install
+bower install fScrollspy.js --save(-dev)
