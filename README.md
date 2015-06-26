@@ -40,7 +40,7 @@ var scrollspy = new Scrollspy({
 	scrollUp: function() {
 		$('#directionTips').text('scrolling up').fadeIn(400);
 	}
-	});
+});
 ```
 
 ## Example
