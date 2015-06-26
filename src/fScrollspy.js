@@ -1,11 +1,12 @@
-/* ===========================
+/* =====================================================
  * @name		scrollspy.js
- * @desc		fork bootstrap-scrollspy.js(https://github.com/twbs/bootstrap/blob/master/js/scrollspy.js) and extend from it
+ * @refer		bootstrap-scrollspy.js
+ * @fork		https://github.com/twbs/bootstrap/blob/master/js/scrollspy.js
  * @author		Frend
  * @version		1.0.0
  * @dependency	jQuery
  * @github		https://github.com/FrendEr/fScrollspy.js
- * =========================== */
+ * ===================================================== */
 
 !function(root, factory) {
 	if (typeof define == 'function' && define.amd) {
@@ -22,8 +23,16 @@
 	Scrollspy.VERSION = '1.0.0';
 
 	Scrollspy.DEFAULT = {
-		scrollElement: window,
-		offset: 10
+		scrollElement: 	window,
+		offset: 		10,
+		selector: 		'.nav a',
+		activeCls: 		'on',
+		reachSelector: 	$.noop,
+		leaveSelector: 	$.noop,
+		reachTarget: 	$.noop,
+		leaveTarget: 	$.noop,
+		scrollDown: 	$.noop,
+		scrollUp: 		$.noop
 	}
 
 	//Scrollspy constructor
@@ -32,6 +41,7 @@
 		this.options = $.extend(Scrollspy.DEFAULT, options);
 		this.$body = $(document.body);
 		this.$scrollElement = $(this.options.scrollElement);
+		this.scrollTopTmp = 0;
 		this.selector = this.options.selector;
 		this.selectorTop = $(this.selector).offset().top;
 		this.activeCls = this.options.activeCls;
@@ -46,6 +56,7 @@
 	}
 
 	//return the listening element's scroll height
+	//============================================
 	Scrollspy.prototype.getScrollHeight = function() {
 		return this.$scrollElement[0].scrollHeight || Math.max(this.$body[0].scrollHeight, document.documentElement.scrollHeight);
 	}
@@ -84,8 +95,28 @@
 		var scrollTop = scrollTopOrigin + this.options.offset;
 		var scrollHeight = this.getScrollHeight();
 		var maxScroll = this.options.offset + scrollHeight - this.$scrollElement.height();
+		var maxTargetScroll = 0;
 		var activeTarget = this.activeTarget;
 		var tmp;
+
+		maxTargetScroll = (function() {
+			var count = $(targets[0]).offset().top;
+
+			targets.forEach(function(target) {
+				count += $(target).height();
+			});
+			return count;
+		})();
+
+		//get the scrolling direction
+		if (scrollTopOrigin > this.scrollTopTmp) {
+			//scrolling down
+			this.options.scrollDown();
+		} else {
+			//scrolling up
+			this.options.scrollUp();
+		}
+		this.scrollTopTmp = scrollTopOrigin;
 
 		//page resize or other reasons make
 		//the scrollElement's scrollHeight change,
@@ -94,11 +125,22 @@
 			this.refresh();
 		}
 
+		//in max scroll area
+		if (scrollTop >= $(targets[0]).offset().top && scrollTop <= maxTargetScroll) {
+			this.options.reachTarget.call(this);
+		}
+
+		//leave max scroll area
+		if (scrollTop >= maxTargetScroll) {
+			this.options.leaveTarget.call(this);
+			return;
+		}
+
 		//scrollElement has scroll to max,
 		//if the active target is not the last
 		//one, then set it to active
 		if (scrollTop >= maxScroll) {
-			activeTarget != (tmp = targets[targets.length - 1]) && activate(tmp);
+			activeTarget != (tmp = targets[targets.length - 1]) && this.activate(tmp);
 			return;
 		}
 
@@ -141,8 +183,7 @@
 	//clear the active status
 	//=======================
 	Scrollspy.prototype.clear = function() {
-		$(this.selector + '.' + this.activeCls)
-		.removeClass(this.activeCls);
+		$(this.selector + '.' + this.activeCls).removeClass(this.activeCls);
 	}
 
 	return Scrollspy;

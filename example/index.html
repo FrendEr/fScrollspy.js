@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<title>fScrollspy example</title>
+        <style type="text/css">
+	        * {margin: 0;padding: 0;box-sizing: border-box;}
+			.header {height: 120px;line-height: 120px;background-color: #05b47a;font-size: 26px;font-weight: bold;color: #fff;text-align: center;}
+			.nav {height: 45px;background-color: #50b7ff;width: 100%;}
+			.nav-list {width: 100%;}
+			.nav li {float: left;width: 25%;list-style: none;height: 45px;background-color: #0799ff;border-right: 1px solid #0282db;}
+			.nav li:last-child {border-right: none;}
+			.nav li a {font-size: 14px;text-align: center;line-height: 45px;color: #fff;text-align: center;text-decoration: none;display: block;}
+			.nav li a.on {background-color: #50b7ff;}
+			.section {height: 400px;line-height: 400px;font-size: 20px;color: #fff;font-weight: bold;text-align: center;}
+			#music {background-color: #d6844e;}
+			#movie {background-color: #c8d64e;}
+			#game {background-color: #36be3f;}
+			#food {background-color: #3679be;}
+			.footer {height: 1200px;line-height: 200px;text-align: center;font-size: 14px;color: #fff;background-color: #444;}
+        </style>
+	</head>
+	<body role="document">
+		<header class="header">fScrollspy example</header>
+		<nav class="nav">
+			<ul class="nav-list">
+				<li><a href="#music">music</a></li>
+				<li><a href="#movie">movie</a></li>
+				<li><a href="#game">game</a></li>
+				<li><a href="#food">food</a></li>
+			</ul>
+		</nav>
+		<div class="content">
+			<section id="music" class="section">Music Section</section>
+			<section id="movie" class="section">Movie Section</section>
+			<section id="game" class="section">Game Section</section>
+			<section id="food" class="section">Food Section</section>
+		</div>
+		<footer class="footer">&copy; Frend</footer>
+		<script src="../bower_components/jquery/dist/jquery.js"></script>
+		<script src="../src/fScrollspy.js"></script>
+		<script>
+		$(function() {
+			var scrollspy = new Scrollspy({
+				scrollElement: window,
+				offset: 45,
+				
+				selector: '.nav-list a',
+				activeCls: 'on',
+				reachSelector: function() {
+					$('.nav-list').css({
+						position: 'fixed',
+						top: 0,
+						left: 0,
+						zIndex: 999
+					});
+				},
+				leaveSelector: function() {
+					$('.nav-list').css({
+						position: 'static'
+					});
+				},
+				
+				reachTarget: function() {
+					if (!$('.nav-list').is(':visible')) {
+						$('.nav-list').show();
+					}
+				},
+				leaveTarget: function() {
+					if ($('.nav-list').is(':visible')) {
+						$('.nav-list').hide();
+					}
+				},
+
+				scrollDown: function() {
+					console.log('scrolling down');
+				},
+				scrollUp: function() {
+					console.log('scrolling up');
+				}
+			});
+		});
+		</script>
+	</body>
+</html>
