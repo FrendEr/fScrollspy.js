@@ -63,5 +63,10 @@ demo：[http://frender.github.io/fScrollspy.js](http://frender.github.io/fScroll
 ```javascript
 bower install fScrollspy.js --save(-dev)
 ```
+or
+```javascript
+npm install fscrollspy --save(-dev)
+```
+
 ##Version
 - **1.0.0**
