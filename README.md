@@ -63,3 +63,5 @@ var scrollspy = new Scrollspy({
 ```javascript
 bower install fScrollspy.js --save(-dev)
 ```
+##Version
+- **1.0.0**
