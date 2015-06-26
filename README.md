@@ -65,7 +65,7 @@ bower install fScrollspy.js --save(-dev)
 ```
 or
 ```javascript
-npm install fscrollspy --save(-dev)
+npm install fscrollspy.js --save(-dev)
 ```
 
 ##Version
