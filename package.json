@@ -1,8 +1,8 @@
 {
   "name": "fscrollspy.js",
   "version": "1.0.0",
-  "description": "build for fScrollspy.js",
-  "main": "index.js",
+  "description": "scroll plugin refer to bootstrap-scrollspy.js and extend from it",
+  "main": "fScrollspy.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
