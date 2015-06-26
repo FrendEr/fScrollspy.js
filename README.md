@@ -4,42 +4,42 @@
 ## Init
 ```javascript
 var scrollspy = new Scrollspy({
-		scrollElement: window,
-		offset: 45,
-		
-		selector: '.nav-list a',
-		activeCls: 'on',
-		reachSelector: function() {
-			$('.nav-list').css({
-				position: 'fixed',
-				top: 0,
-				left: 0,
-				zIndex: 999
-			});
-		},
-		leaveSelector: function() {
-			$('.nav-list').css({
-				position: 'static'
-			});
-		},
-		
-		reachTarget: function() {
-			if (!$('.nav-list').is(':visible')) {
-				$('.nav-list').show();
-			}
-		},
-		leaveTarget: function() {
-			if ($('.nav-list').is(':visible')) {
-				$('.nav-list').hide();
-			}
-		},
-
-		scrollDown: function() {
-			$('#directionTips').text('scrolling down').fadeIn(400);
-		},
-		scrollUp: function() {
-			$('#directionTips').text('scrolling up').fadeIn(400);
+	scrollElement: window,
+	offset: 45,
+	
+	selector: '.nav-list a',
+	activeCls: 'on',
+	reachSelector: function() {
+		$('.nav-list').css({
+			position: 'fixed',
+			top: 0,
+			left: 0,
+			zIndex: 999
+		});
+	},
+	leaveSelector: function() {
+		$('.nav-list').css({
+			position: 'static'
+		});
+	},
+	
+	reachTarget: function() {
+		if (!$('.nav-list').is(':visible')) {
+			$('.nav-list').show();
 		}
+	},
+	leaveTarget: function() {
+		if ($('.nav-list').is(':visible')) {
+			$('.nav-list').hide();
+		}
+	},
+	
+	scrollDown: function() {
+		$('#directionTips').text('scrolling down').fadeIn(400);
+	},
+	scrollUp: function() {
+		$('#directionTips').text('scrolling up').fadeIn(400);
+	}
 	});
 ```
 
