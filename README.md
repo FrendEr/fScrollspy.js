@@ -60,4 +60,6 @@ var scrollspy = new Scrollspy({
 - **scrollUp**: 【回调函数】监听屏幕向上滚动的事件
 
 ## Install
+```javascript
 bower install fScrollspy.js --save(-dev)
+```
