@@ -1,7 +1,7 @@
 # fScrollspy.js - 屏幕滚动插件
 这个插件fork自bootstrap的[scrollspy.js](https://github.com/twbs/bootstrap/blob/master/js/scrollspy.js)，在使用上进行了定制和拓展。
 
-## Init
+## Initialize
 ```javascript
 var scrollspy = new Scrollspy({
 	scrollElement: window,
@@ -59,7 +59,7 @@ demo：[http://frender.github.io/fScrollspy.js](http://frender.github.io/fScroll
 - **scrollDown**: 【回调函数】监听屏幕向下滚动的事件
 - **scrollUp**: 【回调函数】监听屏幕向上滚动的事件
 
-## Install
+## Installation
 ```javascript
 bower install fScrollspy.js --save(-dev)
 ```
