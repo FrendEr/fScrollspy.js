@@ -18,6 +18,7 @@
 			#movie {background-color: #c8d64e;}
 			#game {background-color: #36be3f;}
 			#food {background-color: #3679be;}
+			.direction-tips {position: fixed;right: 30px;bottom: 50px;background-color: rgba(0, 0, 0, .6);font-size: 16px;font-weight: bold;color: #fff;padding: 5px 15px;border-radius: 3px;display: none;}
 			.footer {height: 1200px;line-height: 200px;text-align: center;font-size: 14px;color: #fff;background-color: #444;}
         </style>
 	</head>
@@ -37,6 +38,7 @@
 			<section id="game" class="section">Game Section</section>
 			<section id="food" class="section">Food Section</section>
 		</div>
+		<span id="directionTips" class="direction-tips"></span>
 		<footer class="footer">&copy; Frend</footer>
 		<script src="../bower_components/jquery/dist/jquery.js"></script>
 		<script src="../src/fScrollspy.js"></script>
@@ -74,10 +76,10 @@
 				},
 
 				scrollDown: function() {
-					console.log('scrolling down');
+					$('#directionTips').text('scrolling down').fadeIn(400);
 				},
 				scrollUp: function() {
-					console.log('scrolling up');
+					$('#directionTips').text('scrolling up').fadeIn(400);
 				}
 			});
 		});
