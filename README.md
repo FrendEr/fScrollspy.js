@@ -44,7 +44,7 @@ var scrollspy = new Scrollspy({
 ```
 
 ## Example
-例子：[http://frender.github.io/fScrollspy.js](http://frender.github.io/fScrollspy.js)
+demo：[http://frender.github.io/fScrollspy.js](http://frender.github.io/fScrollspy.js)
 
 ## Options
 
