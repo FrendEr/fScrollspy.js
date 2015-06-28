@@ -1,5 +1,5 @@
 # fScrollspy.js - 屏幕滚动插件
-这个插件fork自bootstrap的[scrollspy.js](https://github.com/twbs/bootstrap/blob/master/js/scrollspy.js)，在使用上进行了定制和拓展。
+这个插件参考bootstrap的[scrollspy.js](https://github.com/twbs/bootstrap/blob/master/js/scrollspy.js)，在使用上进行了定制和拓展。
 
 ## Initialize
 ```javascript
