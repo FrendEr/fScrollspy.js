@@ -1,6 +1,6 @@
 {
   "name": "fscrollspy.js",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "scroll plugin refer to bootstrap-scrollspy.js and extend from it",
   "main": "fScrollspy.js",
   "scripts": {
