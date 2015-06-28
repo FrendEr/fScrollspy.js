@@ -65,7 +65,7 @@ bower install fScrollspy.js --save(-dev)
 ```
 or
 ```javascript
-npm install fscrollspy.js --save(-dev)
+npm install fscrollspy.js --save(-dev) //注意大小写😂npm注册模块只允许小写也是醉了
 ```
 
 ##Version
