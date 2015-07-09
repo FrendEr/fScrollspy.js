@@ -48,7 +48,6 @@ link：[http://frender.github.io/fScrollspy.js](http://frender.github.io/fScroll
 
 ## Options
 
-<<<<<<< HEAD
 - **scrollElement** `@String or @DOMElement`
 > 监听滚动的元素，默认为window
 
@@ -78,18 +77,6 @@ link：[http://frender.github.io/fScrollspy.js](http://frender.github.io/fScroll
 
 - **scrollUp** `@Function`
 > 监听屏幕向上滚动的事件
-=======
-- **scrollElement**: 监听滚动的元素，默认为window
-- **offset**:        偏移量，为到达监听对象前后设置一个过渡距离
-- **selector**:      选择器，在这里为监听滚动事件的导航元素
-- **activeCls**:     选中状态下的导航元素的class
-- **reachSelector**:【回调函数】监听选择器到达最顶部的监听对象的事件
-- **leaveSelector**:【回调函数】监听选择器离开最顶部的监听对象的事件
-- **reachTarget**:  【回调函数】监听选择器进入监听对象区域的事件
-- **leaveTarget**:  【回调函数】监听选择器离开监听对象区域的事件
-- **scrollDown**:   【回调函数】监听屏幕向下滚动的事件
-- **scrollUp**:     【回调函数】监听屏幕向上滚动的事件
->>>>>>> origin/master
 
 ## Installation
 ```javascript
@@ -97,11 +84,7 @@ bower install fScrollspy.js [--save[-dev]]
 ```
 or
 ```javascript
-<<<<<<< HEAD
 npm install fscrollspy.js [--save[-dev]]
-=======
-npm install fscrollspy.js --save(-dev) //注意大小写😂npm发布模块只允许小写也是醉了
->>>>>>> origin/master
 ```
 
 ##Version
