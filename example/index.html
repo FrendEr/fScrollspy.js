@@ -40,15 +40,14 @@
 		</div>
 		<span id="directionTips" class="direction-tips"></span>
 		<footer class="footer">&copy; Frend</footer>
-		<script src="//frend.com/fScrollspy.js/bower_components/jquery/dist/jquery.js"></script>
-		<script src="//frend.com/fScrollspy.js/src/fScrollspy.js"></script>
-		<script src="//frend.com/fScrollspy.js/src/t.js"></script>
+		<script src="../bower_components/jquery/dist/jquery.js"></script>
+		<script src="../src/fScrollspy.js"></script>
 		<script>
 		$(function() {
 			var scrollspy = new Scrollspy({
 				scrollElement: window,
 				offset: 45,
-				
+
 				selector: '.nav-list a',
 				activeCls: 'on',
 				reachSelector: function() {
@@ -64,7 +63,7 @@
 						position: 'static'
 					});
 				},
-				
+
 				reachTarget: function() {
 					if (!$('.nav-list').is(':visible')) {
 						$('.nav-list').show();
