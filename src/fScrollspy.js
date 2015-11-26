@@ -19,7 +19,7 @@
 }('Scrollspy', function() {
 
     'use strict';
-
+alert(1);
     Scrollspy.VERSION = '1.0.0';
 
     Scrollspy.DEFAULT = {
