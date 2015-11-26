@@ -89,6 +89,7 @@
     //init the params and init the events
     //===================================
     Scrollspy.prototype.process = function() {
+        var self = this;
         var offsets = this.offsets;
         var targets = this.targets;
         var scrollTopOrigin = this.$scrollElement.scrollTop();
@@ -111,10 +112,14 @@
         //get the scrolling direction
         if (scrollTopOrigin > this.scrollTopTmp) {
             //scrolling down
-            this.options.scrollDown();
+            setTimeout(function() {
+                self.options.scrollDown();
+            }, 0);
         } else {
             //scrolling up
-            this.options.scrollUp();
+            setTimeout(function() {
+                self.options.scrollUp();
+            }, 0);
         }
         this.scrollTopTmp = scrollTopOrigin;
 
