@@ -19,7 +19,7 @@
 }('Scrollspy', function() {
 
     'use strict';
-alert(1);
+
     Scrollspy.VERSION = '1.0.0';
 
     Scrollspy.DEFAULT = {
@@ -112,14 +112,10 @@ alert(1);
         //get the scrolling direction
         if (scrollTopOrigin > this.scrollTopTmp) {
             //scrolling down
-            setTimeout(function() {
-                self.options.scrollDown();
-            }, 0);
+            self.options.scrollDown();
         } else {
             //scrolling up
-            setTimeout(function() {
-                self.options.scrollUp();
-            }, 0);
+            self.options.scrollUp();
         }
         this.scrollTopTmp = scrollTopOrigin;
 
